@@ -3,14 +3,19 @@ const express = require("express");
 const router = express.Router();
 
 
-const {Createnewbook,GetallBook,featuredBook,BookSearch,getProducts,singleBook,updateBook,deleteBook} = require('../controllers/Bookcontroller')
+const {Createnewbook,GetallBook,featuredBook,BookSearch,getProducts,singleBook,updateBook,deleteBook,Myallbook} = require('../controllers/Bookcontroller')
 
 
-//router.get("/ragib",(req,res)=> {   
+//router.get("/",(req,res)=> {   
 
 //   res.send("Hellow")
 
 //})
+
+
+
+ router.post("/",Myallbook)
+
 
 //http://localhost:5000/api/createnewbook
  router.post("/createnewbook",Createnewbook)

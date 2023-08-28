@@ -49,6 +49,34 @@ const Createnewbook = asyncHandler( async (req,res) => {
 })
 
 
+//Myallbook
+
+
+const Myallbook = asyncHandler( async(req,res)=>{
+
+
+  try{
+
+
+          const getallbook = await Book.find();
+
+          res.status(200).json(getallbook)
+
+
+
+  }catch(error){
+
+
+res.status(401).json({message:error})
+
+
+
+  }
+
+})
+
+
+
 
 
 //get all book
@@ -264,4 +292,4 @@ const deleteBook = asyncHandler(async(req,res)=>{
 
 
 
-module.exports = {Createnewbook,GetallBook,featuredBook,BookSearch,getProducts,singleBook,updateBook,deleteBook}
+module.exports = {Createnewbook,GetallBook,featuredBook,BookSearch,getProducts,singleBook,updateBook,deleteBook,Myallbook}
